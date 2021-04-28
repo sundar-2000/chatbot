@@ -3,124 +3,118 @@
 <html>
 
 <head>
+  <!-- Primary Meta Tags -->
   <title>Askimo</title>
+  <link rel="shortcut icon" type="image/jpg" href="https://www.dropbox.com/s/sghwn19ibyetizy/bot.jpeg?raw=1"/>
+  <meta name="title" content="Askimo">
+  <meta name="description" content="Ask,Chat and learn with me :)">
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <meta name="viewport" content="width = device-width,maximum-scale=1,user-scalable=no">
   
   <style>
   .umsg {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: row-reverse;  
+  }
+  .umsg>div{
+  background-color: cornflowerblue;
+  margin: 10px 3px;
+  max-width: 70%;
   padding: 10px;
-  margin: 10px 0;
-  width: 200px;
-  position: relative;
-  left: 5%;
+  border-radius: 15px;
+  border-bottom-right-radius: 0;
   box-shadow: 0 2px 1px rgba(0,0,0,0.09),
               0 4px 2px rgba(0,0,0,0.09),
-              0 8px 4px rgba(0,0,0,0.09),
-              0 16px 8px rgba(0,0,0,0.09),
-              0 32px 16px rgba(0,0,0,0.09);
+              0 8px 4px rgba(0,0,0,0.09);
 }
 
 .botmsg {
-  border-color: #ccc;
-  background-color: ;
+  display: flex;
+}
+ .botmsg>div{ 
+  background-color: #f8f8ff;
   padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  width: 200px;
-  position: relative;
-  left: 25%;
+  margin: 10px 3px;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  max-width: 70%;
   box-shadow: 0 2px 1px rgba(0,0,0,0.09),
               0 4px 2px rgba(0,0,0,0.09),
-              0 8px 4px rgba(0,0,0,0.09),
-              0 16px 8px rgba(0,0,0,0.09),
-              0 32px 16px rgba(0,0,0,0.09);
+              0 8px 4px rgba(0,0,0,0.09);
 }
 body {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 100%;
-  
-
-
+  background: #fff;
 }
 #header, #footer {
     position: fixed;
     width: 100%;
-    left: 0;
     top: 0;
-    height: 50px;
-    background: #3366FF;
-
+    bottom: auto;
+    height: 10vh;
+    background: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
-
-
 #footer {
     bottom: 0;
     top: auto;
+    padding: 1rem;
 }
 #container {
-    position: absolute;
-    top: 50px;
-    bottom: 50px;
-    width: 90%;
-    overflow: auto;
-    margin: 5px;
+  padding: 10.5vh 1rem;
+  overflow: auto;   
 }
 
 #search{
-  position: fixed;
-  bottom: 2%;
   border-radius: 20px;
-  border: 1px solid #06d6a0 ;
   color: #000000;
+  border: 1px solid #000;
   font-size: medium;
-  width: 75%;
-  height: 20px;
-  padding-left: 10px;
-  margin-left: 10px;
+  width: 100%;
+  padding: 1rem;
+  height: 2.5rem;
   outline: none;
-  box-shadow: 0 0 5px #ff0000 , 0 0 10px #0000ff;
 }
 
 #sendimg{
-  position: fixed;
-  display : inline;
   border-radius: 50%;
-  right: 20px;
-  height: 33px;
-  bottom: 1.8%;
-
+  height: 2.5rem;
+  margin: 0 0.5rem;
 }
 #botimg{
-  position: fixed;
   border-radius: 50%;
-  left: 20px;
-  height: 40px;
-  margin: 5px;
+  height: 2.5rem;
+  margin-left: 1rem;
 }
 #tit{
-  position: fixed;
-  left: 75px;
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-weight: bold;
+  font-size: 1.5rem;
+  flex: 1;
+  margin-left: 1rem;
 }
 #info,#back{
-   position: fixed;
-    right: 20px;
-    top: 10px;
-    margin: 5px;
+    margin-right: 1rem;
     font-weight: bold;
-    font-size: large;
-
+    font-size: 2rem;
+    cursor: pointer;
 }
 #main2{
     display: none;
+}
+#exp{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: cornflowerblue;
 }
 
 
@@ -128,21 +122,23 @@ body {
 </head>
 
 <body>
-<article id ="main1">
+<div id ="main1">
+<div id="container" class= "container"></div>
 <div id ="header">
-<img  id ="botimg" src="https://www.dropbox.com/s/sghwn19ibyetizy/bot.jpeg?raw=1" alt="" />
-<p id = "tit">Askimo</p>
-<p  id ="info" onclick = "info()">&#9432;</p>
-</div>
-<div id = "container">
-</div>
+  <div><img  id ="botimg" src="https://www.dropbox.com/s/sghwn19ibyetizy/bot.jpeg?raw=1" alt="botimg" /></div>
+  <div id = "tit">Askimo</div>
+  <div  id ="info" onclick = "info()">&#9432;</div>
+  </div>
 <div id = "footer">
- <input id ="search" placeholder ="Type a message" autofocus>
- <img  id = "sendimg" src="https://www.dropbox.com/s/rsqcn0ujk4p5gr0/send.png?raw=1" onclick = "fetch()" alt="" />
+ <div style="flex: 1;"><input id ="search" placeholder ="Type a message" autofocus></div>
+ <div style="cursor: pointer;">
+  <img  id = "sendimg" src="https://www.dropbox.com/s/rsqcn0ujk4p5gr0/send.png?raw=1" onclick = "fetch()" alt="sendicon" />
+</div>
  </div>
- </article>
- <article id ="main2" style = "margin: 5px" >
- <p id = "back" onclick ="back()">&larr;</p>
+</div>
+ <div id ="main2" style = "margin: 1rem">
+ <p id = "back" onclick ="back()">&#10096;&#10096; Back</p>
+ <div id="exp">
  <p style="text-align: center; font-weight: bold">Askimo</p>
  <ul  style="font-style: italic">
   <li>Askimo is an user interactive chatbot powered by wikipedia.</li>
@@ -155,10 +151,16 @@ body {
   <p>~ Done by Sundar ~</p>
   <p>~ Special mention: <u>Agilan</u> ~</p>
  </ul>
- </article>
+</div> 
+</div>
 </body>
 
 <script>
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        fetch();
+    }
+});  
 var res, words, word_clean;
 var stopwords =["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an", "the", "and", "but", "if", "or", "because", "as", "until", "while", "of", "at", "by", "for", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now", "?", "tell"]
 var msg =["hi",
@@ -166,27 +168,34 @@ var msg =["hi",
   "name",
   "you",
   "bye",
-  "goodbye"]
+  "goodbye",
+  "time",
+  "date"]
 
 
-var reply =["Hi!..How can I help you?",
+var reply =["Hi!..How can I help you ?",
   "Hello..  I'm Glad to talk with you. Ask me anything",
   "My name is Askimo.I'm your personal assisstant",
   "I'm  Askimo a bot and  I'm super fine. Ask your quesitons",
   "Had a nice time talking with you. Hope we talk later",
-  "Ok bye.. Let's talk another day"]
+  "Ok bye.. Let's talk another day",
+  "The time is "+new Date().toLocaleTimeString(),
+  "Today is "+ new Date().toLocaleDateString()]
 
 
 function fetch()
 {
   var search = document.getElementById("search").value;
   var success = 0;
-
+  if(search.length<=0)
+    return 0;
   //display your msg
-  var upara = document.createElement("p");
+  var upara = document.createElement("div");
   upara.className = "umsg";
+  var ubox =document.createElement("div");
   var unode = document.createTextNode(search);
-  upara.appendChild(unode);
+  ubox.appendChild(unode);
+  upara.appendChild(ubox);
   document.getElementById("container").appendChild(upara);
 
   search = search.toLowerCase();
@@ -220,17 +229,19 @@ function fetch()
     xhr.send();
     var res = JSON.parse(xhr.response);
     if(res.title == "Not found.")
-      res = "sorry I can't get you. Try adding space between two words or I may not be programmed for it"
-      else
+      res = "sorry I can't get you. Try adding space between two words or I may not be programmed for it";
+    else
         res = res.extract;
   }
   //display botmsg
-
-  var bpara = document.createElement("p");
+  
+  var bpara = document.createElement("div");
   bpara.className = "botmsg"
+  var bbox = document.createElement("div");
   var bnode = document.createTextNode(res);
-  bpara.appendChild(bnode);
-  document.getElementById("container").appendChild(bpara);
+  bbox.appendChild(bnode);
+  bpara.appendChild(bbox);
+  setTimeout(()=>{document.getElementById("container").appendChild(bpara);},250);
   document.getElementById("search").value = "";
   setTimeout(()=>{
   var t=
@@ -239,7 +250,7 @@ function fetch()
     {
     behavior: 'smooth'
     }
-  );},150)
+  );},250)
 
 }
 function info()
