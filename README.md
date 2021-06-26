@@ -5,4 +5,8 @@
 <img src="askimo.PNG" width=200 style="margin:15px">
 </p>
 
+ ## Used:
+ <li> Wikipedia API </li>
+ <li> Stopwords Filtering </li>
+
 
